@@ -36,6 +36,11 @@ def cadastro(request):
 
 ################
 
+def index (request):
+    
+    if request.method == 'GET':
+        return render(request, 'index.html')
+
 def logar (request):
 
     if request.method == 'GET':
