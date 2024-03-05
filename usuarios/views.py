@@ -40,6 +40,7 @@ def index (request):
     
     if request.method == 'GET':
         return render(request, 'index.html')
+        
 
 def logar (request):
 
@@ -54,7 +55,7 @@ def logar (request):
         if user:
             auth.login(request, user)
             messages.add_message(request,constants.SUCCESS, 'Logado!')
-            return redirect('/flashcard/novo_flashcard/') #vai dar erro ainda
+            return redirect('/usuarios/index') #redireciona para a tela do index
         else:
             messages.add_message(request, constants.ERROR,'Username ou senha invalidos')
             return redirect('/usuarios/logar/')
