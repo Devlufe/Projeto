@@ -27,3 +27,19 @@
     background: #5bd9a9;
     margin: 4px 10px;
   }
+
+  /* Estilos para o botão de logout */
+  .logout-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #ff0000; /* Cor de fundo do botão */
+      color: #fff; /* Cor do texto do botão */
+      text-decoration: none; /* Remove o sublinhado padrão do link */
+      border-radius: 5px; /* Borda arredondada */
+      transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+  }
+  
+  .logout-button:hover {
+      background-color: #cc0000; /* Mudança de cor ao passar o mouse */
+  }
+  

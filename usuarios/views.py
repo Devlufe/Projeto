@@ -67,3 +67,5 @@ def logout(request):
     return redirect('/usuarios/logar')
 
 
+
+

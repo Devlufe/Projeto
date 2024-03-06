@@ -1169,12 +1169,12 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Hero Section
+# Hero Section cor de fundo do cabçalho d apagina inicial
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
   min-height: 30vh;
-  background: #000;
+  background: #ADD8E6;
   background-size: cover;
   position: relative;
   padding: 140px 0 60px 0;
@@ -1227,7 +1227,7 @@ h6 {
 }
 
 .hero .btn-get-started:hover {
-  background: #2cbc85;
+  background: #66CDAA;
 }
 
 @media (max-width: 768px) {
@@ -1262,4 +1262,17 @@ h6 {
   color: var(--color-primary);
 }
 
+
+  /* Estilo para posicionar o botão no canto superior direito */
+  .logout-form {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+  }
+
+  .logout-form {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
 
