@@ -42,4 +42,47 @@
   .logout-button:hover {
       background-color: #cc0000; /* Mudança de cor ao passar o mouse */
   }
+
+  {% comment %} #hero {
+    height: calc(100vh - 80px); /* Altura da janela menos a altura do menu */
+    background-size: cover;
+    background-position: center;
+  }
   
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+
+  .swiper-pagination {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 2px;
+    border-radius: 50%;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background-color: #fff;
+  }
+  .swiper-slide {
+    display: flex; /* Adiciona flexbox para ajustar o alinhamento */
+    justify-content: center; /* Centraliza o conteúdo horizontalmente */
+    align-items: center; /* Centraliza o conteúdo verticalmente */
+  }
+  
+  .swiper-slide img {
+    max-width: 100%; /* Define a largura máxima da imagem para ocupar todo o espaço disponível */
+    max-height: 100%; /* Define a altura máxima da imagem para ocupar todo o espaço disponível */
+    width: auto; /* Define a largura automática para manter a proporção da imagem */
+    height: auto; /* Define a altura automática para manter a proporção da imagem */
+  } {% endcomment %}
+      
