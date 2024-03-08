@@ -1263,16 +1263,5 @@ h6 {
 }
 
 
-  /* Estilo para posicionar o botão no canto superior direito */
-  .logout-form {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-  }
 
-  .logout-form {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-}
 
