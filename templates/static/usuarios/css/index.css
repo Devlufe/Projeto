@@ -43,6 +43,24 @@
       background-color: #cc0000; /* Mudança de cor ao passar o mouse */
   }
 
+  /* Estilize o container do carrossel */
+  #carouselExampleIndicators {
+    position: relative; /* Define a posição relativa para poder posicionar os slides de forma absoluta */
+    margin-top: 500px; /* Ajuste conforme necessário para garantir que o carrossel fique abaixo da barra de menu */
+  }
+  
+  /* Estilize os controles de navegação */
+  .carousel-control-prev, .carousel-control-next {
+    z-index: 1; /* Garante que os controles de navegação fiquem sobre os slides */
+  }
+  
+  /* Estilize os indicadores */
+  .carousel-indicators {
+    z-index: 1; /* Garante que os indicadores fiquem sobre os slides */
+  }
+  
+
+
   {% comment %} #hero {
     height: calc(100vh - 80px); /* Altura da janela menos a altura do menu */
     background-size: cover;
