@@ -42,25 +42,32 @@
   .logout-button:hover {
       background-color: #cc0000; /* Mudança de cor ao passar o mouse */
   }
-
-  /* Estilize o container do carrossel */
-  #carouselExampleIndicators {
-    position: relative; /* Define a posição relativa para poder posicionar os slides de forma absoluta */
-    margin-top: 500px; /* Ajuste conforme necessário para garantir que o carrossel fique abaixo da barra de menu */
+  /* Ajusta o tamanho do carrossel */
+  .carousel {
+      width: 1900px; /* Largura desejada */
+      height: 450px; /* Altura desejada */
+      margin: 0 auto; /* Centraliza o carrossel */
+      overflow: hidden; /* Esconde o conteúdo que ultrapassa o tamanho */
   }
   
-  /* Estilize os controles de navegação */
-  .carousel-control-prev, .carousel-control-next {
-    z-index: 1; /* Garante que os controles de navegação fiquem sobre os slides */
+  /* Ajusta o tamanho dos itens do carrossel */
+  .carousel-item {
+      width: 300px; /* Largura dos itens */
+      height: 2000px; /* Altura dos itens */
   }
   
-  /* Estilize os indicadores */
-  .carousel-indicators {
-    z-index: 1; /* Garante que os indicadores fiquem sobre os slides */
+  /* Adiciona uma animação de transição suave */
+  .carousel-inner {
+      transition: transform 0.5s ease;
   }
   
-
-
+  /* Ajusta a largura das imagens dentro dos itens do carrossel */
+  .carousel-item img {
+      width: 150%; /* Ajusta a largura da imagem para preencher o item do carrossel */
+      height: 550px; /* Ajusta a altura da imagem para preencher o item do carrossel */
+      object-fit: cover; /* Faz com que a imagem cubra todo o espaço do item do carrossel */
+  }
+  
   {% comment %} #hero {
     height: calc(100vh - 80px); /* Altura da janela menos a altura do menu */
     background-size: cover;
