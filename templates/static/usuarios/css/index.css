@@ -36,6 +36,17 @@
       overflow: hidden; /* Esconde o conteúdo que ultrapassa o tamanho */
   }
   
+  .logout-button:hover {
+      background-color: #cc0000; /* Mudança de cor ao passar o mouse */
+  }
+  /* Ajusta o tamanho do carrossel */
+  .carousel {
+      width: 1900px; /* Largura desejada */
+      height: 450px; /* Altura desejada */
+      margin: 0 auto; /* Centraliza o carrossel */
+      overflow: hidden; /* Esconde o conteúdo que ultrapassa o tamanho */
+  }
+  
   /* Ajusta o tamanho dos itens do carrossel */
   .carousel-item {
       width: 300px; /* Largura dos itens */
