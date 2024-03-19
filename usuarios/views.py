@@ -35,13 +35,7 @@ def cadastro(request):
             return redirect('/usuarios/cadastro')
 
 ################
-
-def index (request):
-    
-    if request.method == 'GET':
-        return render(request, 'index.html')
         
-
 def logar (request):
 
     if request.method == 'GET':
@@ -55,7 +49,7 @@ def logar (request):
         if user:
             auth.login(request, user)
             messages.add_message(request,constants.SUCCESS, 'Logado!')
-            return redirect('/usuarios/index') #redireciona para a tela do index
+            return redirect('/principal/index') #redireciona para a tela do index
         else:
             messages.add_message(request, constants.ERROR,'Username ou senha invalidos')
             return redirect('/usuarios/logar/')
@@ -65,7 +59,5 @@ def logar (request):
 def logout(request):
     auth.logout(request)
     return redirect('/usuarios/logar')
-
-
 
 

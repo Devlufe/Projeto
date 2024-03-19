@@ -9,8 +9,8 @@
 /* Colors */
 :root {
   --color-default: #fafafa;
-  --color-primary: #eb0202;
-  --color-secondary: #161718;
+  --color-primary: #219ebc;
+  --color-secondary: #0000006F;
 }
 
 /* Smooth scroll behavior */
@@ -19,14 +19,14 @@
 }
 :root {
   --primary-color: #007bff;
-  --secondary-color: #6c757d;
-  --background-color: #000000;
+  --secondary-color: #515355;
+  --background-color: #219ebc;
 }
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
-  background-color: #000000; /* Cor do fundo  */
+  background-color: #FFFFFF; /* Cor do fundo  */
 }
 
 a {
@@ -35,7 +35,7 @@ a {
 }
 
 a:hover {
-  color: #32cf93;
+  color: #23A053;
   text-decoration: none;
 }
 
@@ -56,7 +56,7 @@ h6 {
 }
 
 .search-input {
-  background-color:black;
+  background-color:#FFFFFF;
   color: white;
 
 }
@@ -132,7 +132,7 @@ h6 {
 }
 
 .page-header .cta-btn:hover {
-  background: #2cbc85;
+  background: #000000;
 }
 
 /*--------------------------------------------------------------
@@ -283,7 +283,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 30px 0;
-  background-color: #000;
+  background-color: #8ecae6;
 }
 
 .header .logo {
@@ -1169,12 +1169,12 @@ h6 {
 }
 
 /*--------------------------------------------------------------
-# Hero Section cor de fundo do cabçalho d apagina inicial
+# Hero Section
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
   min-height: 30vh;
-  background: #ADD8E6;
+  background: #FFFFFF;
   background-size: cover;
   position: relative;
   padding: 140px 0 60px 0;
@@ -1184,7 +1184,7 @@ h6 {
   margin: 0 0 10px 0;
   font-size: 38px;
   font-weight: 700;
-  color: #fff;
+  color:  #000000C9;
   font-family: var(--font-secondary);
 }
 
@@ -1207,7 +1207,7 @@ h6 {
 }
 
 .hero p {
-  color: rgba(255, 255, 255, 0.6);
+  color: #000000C9;
   margin-bottom: 30px;
   font-size: 18px;
 }
@@ -1227,7 +1227,7 @@ h6 {
 }
 
 .hero .btn-get-started:hover {
-  background: #66CDAA;
+  background: #2cbc85;
 }
 
 @media (max-width: 768px) {
@@ -1263,5 +1263,7 @@ h6 {
 }
 
 
-
-
+.btn-custom {
+  background-color: #219ebc; /* Cor personalizada */
+  color: #ffffff; /* Cor do texto */
+}
