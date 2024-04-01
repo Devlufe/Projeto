@@ -1268,3 +1268,73 @@ h6 {
   background-color: #219ebc; /* Cor personalizada */
   color: #ffffff; /* Cor do texto */
 }
+
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: green;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  z-index: 9999;
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.1);
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.whatsapp-button:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+.whatsapp-button img {
+  width: 30px;
+  height: 30px;
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+  width: 10px; /* largura da barra de rolagem */
+  background-color: transparent; /* torna a barra de rolagem transparente */
+}
+
+/* Estilo do indicador da barra de rolagem */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5); /* cor do indicador */
+  border-radius: 5px; /* borda arredondada */
+}
+
+/* Estilo da área da barra de rolagem */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* torna a área da barra de rolagem transparente */
+}
+
+/* Estilo ao passar o mouse sobre a barra de rolagem */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.7); /* cor do indicador ao passar o mouse */
+}
