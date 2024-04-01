@@ -69,9 +69,9 @@ h6 {
   margin: 0 0 5px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
   font-family: var(--font-primary);
 }
+
 
 .section-header h2::after {
   content: "";
@@ -88,7 +88,7 @@ h6 {
   font-size: 36px;
   font-weight: 700;
   font-family: var(--font-secondary);
-  color: #fff;
+  color: #cb4343;
 }
 
 /*--------------------------------------------------------------
@@ -103,7 +103,7 @@ h6 {
 .page-header h2 {
   font-size: 56px;
   font-weight: 500;
-  color: #fff;
+  
   font-family: var(--font-secondary);
 }
 
@@ -114,7 +114,8 @@ h6 {
 }
 
 .page-header p {
-  color: rgba(255, 255, 255, 0.8);
+  
+  
 }
 
 .page-header .cta-btn {
@@ -1027,7 +1028,7 @@ h6 {
   margin: 0;
   font-size: 18px;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.6);
+  text-darck
 }
 
 .pricing .pricing-item h4 {
