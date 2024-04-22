@@ -37,18 +37,23 @@
           <!-- ======= Header (Cabeçalho)======= -->
       <header id="header" class="header d-flex align-items-center fixed-top">
         <div class="container-fluid d-flex align-items-center justify-content-between">
-
-          
-<!-- Botão de Logout -->
+              <!-- Botão de Logout -->
 {% if user.is_authenticated %}
-  <form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <button type="submit" class="btn btn-custom">Sair</button>
-  </form>
+<form action="{% url 'logout' %}" method="post">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-custom">Sair</button>
+  
+</form>
 {% else %}
-  <!-- Botão de Login -->
-  <a href="{% url 'login' %}" class="btn btn-custom">Login</a>
+<!-- Botão de Login -->
+<a href="{% url 'login' %}" class="btn btn-custom">Login</a>
+
 {% endif %}
+
+
+
+<!-- <h1>Bem-vindo, {{ user.username }}</h1> Para o ronald colocar essa função no index com inclementos em CSS para ficar igual os button ""-->
+
 
 
 
@@ -56,7 +61,7 @@
             <!-- Remova o comentário da linha abaixo se também desejar usar uma imagem de logotipo -->
             <!-- <img src={% static 'img/logo.png" alt=""> -->
             <img src="{% static 'img/logo2.png' %}" alt="">
-            <!--h1>Projeto</h1>-->
+            <h1>  </h1>
           </a>
           
           <nav class="navbar" style="background-color: #F3F3F300;">
@@ -92,6 +97,7 @@
             </li>
             <li><a href="{% url 'services' %}">Serviços</a></li>
             <li><a href="{% url 'contact' %}">Contatos</a></li>
+            <li><a href="{% url 'login-de-autenticação' %}">Dashboard</a></li>
           </ul>
         </nav>
  
@@ -104,9 +110,8 @@
 
         </div>
       </header>
-
-<!-- Início do elemento do carrossel com indicadores -->
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <!-- Início do elemento do carrossel com indicadores -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
   <!-- Indicadores do carrossel -->
   <div class="carousel-indicators">
     <!-- Botão para o slide 1 (ativa) -->
@@ -121,17 +126,17 @@
     <!-- Slide 1 (ativa) -->
     <div class="carousel-item active">
       <!-- Imagem do slide 1 -->
-      <img src="{% static 'img/c1.jpg' %}" class="d-block w-100" alt="Slide 1">
+      <img src="{% static 'img/gallery-2.jpg' %}" class="d-block w-100" alt="Slide 1">
     </div>
     <!-- Slide 2 -->
     <div class="carousel-item">
       <!-- Imagem do slide 2 -->
-      <img src="{% static 'img/c2.jpg' %}" class="d-block w-100" alt="Slide 2">
+      <img src="{% static 'img/gallery-2.jpg' %}" class="d-block w-100" alt="Slide 2">
     </div>
     <!-- Slide 3 -->
     <div class="carousel-item">
       <!-- Imagem do slide 3 -->
-      <img src="{% static 'img/c3.jpg' %}" class="d-block w-100" alt="Slide 3">
+      <img src="{% static 'img/gallery-2.jpg' %}" class="d-block w-100" alt="Slide 3">
     </div>
   </div>
   <!-- Controle de navegação para o slide anterior -->
@@ -324,13 +329,14 @@
     </div>
   </footer><!-- End Footer -->
 
-  
-
   <a href="https://api.whatsapp.com/send?phone=SEU_NUMERO_DE_TELEFONE" class="whatsapp-button" target="_blank">
     <img src="{% static 'img/whatsapp-icon.png' %}" alt="WhatsApp">
     <span class="tooltip">Enviar mensagem</span>
   </a>
-  
+
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
  
   <!-- Vendor JS Files -->
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>

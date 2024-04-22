@@ -15,14 +15,12 @@ def cadastro(request):
         confirmar_senha = request.POST.get('confirmar_senha')
 
         if not senha == confirmar_senha:
-            messages.add_message(request, constants.ERROR,
-                                 'Senha e confirmar senha não coíncidem. ')
+            messages.add_message(request, constants.ERROR,'Senha e confirmar senha não coíncidem. ')
             return redirect('/usuarios/cadastro')
 
         user = User.objects.filter(username=username)
         if user.exists():
-            messages.add_message(request, constants.ERROR,
-                                 'Usuario já existe. ')
+            messages.add_message(request, constants.ERROR,'Usuario já existe. ')
             return redirect('/usuarios/cadastro')
 
         try:
@@ -30,8 +28,7 @@ def cadastro(request):
             # vai dar erro pois nao foi criada a url login
             return redirect('/usuarios/logar')
         except:
-            messages.add_message(request, constants.ERROR,
-                                 'Erro interno do servidor. ')
+            messages.add_message(request, constants.ERROR,'Erro interno do servidor. ')
             return redirect('/usuarios/cadastro')
 
 ################
@@ -58,6 +55,6 @@ def logar (request):
 
 def logout(request):
     auth.logout(request)
-    return redirect('/usuarios/logar')
+    return redirect('/principal/index')
 
 

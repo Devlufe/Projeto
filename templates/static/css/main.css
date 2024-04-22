@@ -69,9 +69,9 @@ h6 {
   margin: 0 0 5px 0;
   letter-spacing: 2px;
   text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
   font-family: var(--font-primary);
 }
-
 
 .section-header h2::after {
   content: "";
@@ -88,7 +88,7 @@ h6 {
   font-size: 36px;
   font-weight: 700;
   font-family: var(--font-secondary);
-  color: #cb4343;
+  color: #fff;
 }
 
 /*--------------------------------------------------------------
@@ -103,7 +103,7 @@ h6 {
 .page-header h2 {
   font-size: 56px;
   font-weight: 500;
-  
+  color: #fff;
   font-family: var(--font-secondary);
 }
 
@@ -114,8 +114,7 @@ h6 {
 }
 
 .page-header p {
-  
-  
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .page-header .cta-btn {
@@ -284,7 +283,8 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 30px 0;
-  background-color: #8ecae6;
+  height:50px;
+  background-color: #219DBC;
 }
 
 .header .logo {
@@ -1028,7 +1028,7 @@ h6 {
   margin: 0;
   font-size: 18px;
   font-weight: 500;
-  text-darck
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .pricing .pricing-item h4 {
@@ -1284,7 +1284,6 @@ h6 {
   z-index: 9999;
   transition: transform 0.2s ease-in-out;
 }
-
 .whatsapp-button:hover {
   transform: scale(1.1);
 }
@@ -1315,26 +1314,4 @@ h6 {
 .whatsapp-button img {
   width: 30px;
   height: 30px;
-}
-
-/* Estilo da barra de rolagem */
-::-webkit-scrollbar {
-  width: 10px; /* largura da barra de rolagem */
-  background-color: transparent; /* torna a barra de rolagem transparente */
-}
-
-/* Estilo do indicador da barra de rolagem */
-::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.5); /* cor do indicador */
-  border-radius: 5px; /* borda arredondada */
-}
-
-/* Estilo da área da barra de rolagem */
-::-webkit-scrollbar-track {
-  background-color: transparent; /* torna a área da barra de rolagem transparente */
-}
-
-/* Estilo ao passar o mouse sobre a barra de rolagem */
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 0, 0, 0.7); /* cor do indicador ao passar o mouse */
 }

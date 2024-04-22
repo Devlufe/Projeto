@@ -28,7 +28,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'usuarios',
     'principal',
+    'dashboard_fotografo',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

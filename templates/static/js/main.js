@@ -172,8 +172,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
-
-document.querySelector('.whatsapp-popup').addEventListener('click', function(e) {
-  e.preventDefault();
-  window.open('https://api.whatsapp.com/send?phone=SEU_NUMERO_DE_TELEFONE', '_blank', 'width=600,height=400');
-});

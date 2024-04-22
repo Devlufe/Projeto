@@ -52,7 +52,7 @@
         <h1>Projeto</h1>
       </a>
       
-      <nav class="navbar" style="background-color: #F3F3F300;">
+      <nav class="navbar search-input" style="background-color: #F3F3F300;">
         <div class="container-fluid">
           <form class="d-flex" role="search">
             <input class="form-control me-2 search-input" type="search" placeholder="Digite aqui..." aria-label="search">
@@ -83,8 +83,8 @@
               </li>
             </ul>
           </li>
-          <li><a href="{% url 'services' %}">Serviços</a></li>
-          <li><a href="{% url 'contact' %}" class="active">Contatos</a></li>
+          <li><a href="{% url 'services' %}"class="active">Serviços</a></li>
+          <li><a href="{% url 'contact' %}">Contatos</a></li>
         </ul>
       </nav><!-- .navbar -->
       <div class="header-social-links">
@@ -133,8 +133,8 @@
           <div class="col-xl-3 col-md-6 d-flex">
             <div class="service-item position-relative">
               <i class="bi bi-bounding-box-circles"></i>
-              <h4><a href="" class="stretched-link">Mas para ser claro</a></h4>
-              <p>Dúvidas ou irure a dor na repreensão no prazer quer ser um fio de dor</p>
+              <h4><a href="" class="stretched-link">Sed ut perspici</a></h4>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -149,8 +149,8 @@
           <div class="col-xl-3 col-md-6 d-flex">
             <div class="service-item position-relative">
               <i class="bi bi-broadcast"></i>
-              <h4><a href="" class="stretched-link">Ninguém</a></h4>
-              <p>Mas na verdade ambos acusamos aqueles que são dignos de lisonja, e com ódio justo os conduzimos</p>
+              <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
+              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -163,65 +163,66 @@
     <section id="pricing" class="pricing">
       <div class="container">
 
-        <div class="section-header ">
-          <h2>preços</h2>
-          <p>Verifique meus preços adoráveis</p>
+        <div class="section-header">
+          <h2>Prices</h2>
+          <p>Check my adorable pricing</p>
         </div>
 
         <div class="row gy-4 gx-lg-5">
 
           <div class="col-lg-6">
-            <div class=" pricing-item d-flex justify-content-between">
-              <h3>Fotografia de retrato</h3> 
-              <h4>R$160.00</h4>
+            <div class="pricing-item d-flex justify-content-between">
+              <h3>Portrait Photography</h3>
+              <h4>$160.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
-              <h3>Fotografia de moda</h3>
-              <h4>R$300.00</h4>
+              <h3>Fashion Photography</h3>
+              <h4>$300.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
-              <h3>Fotografia Esportiva</h3>
-              <h4>R$200.00</h4>
+              <h3>Sports Photography</h3>
+              <h4>$200.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
-              <h3>Fotografia de natureza morta</h3>
-              <h4>R$120.00</h4>
+              <h3>Still Life Photography</h3>
+              <h4>$120.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
-              <h3>Fotografia de casamento</h3>
-              <h4>R$500.00</h4>
+              <h3>Wedding Photography</h3>
+              <h4>$500.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
-              <h3>Fotojornalismo</h3>
-              <h4>R$200.00</h4>
+              <h3>Photojournalism</h3>
+              <h4>$200.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
         </div>
     </section><!-- End Pricing Section -->
 
+
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials">
       <div class="container">
 
         <div class="section-header">
-          <h2>Depoimentos</h2>
-          <p>O que eles estão dizendo</p>
+          <h2>Testimonials</h2>
+          <p>What they are saying</p>
         </div>
 
         <div class="slides-3 swiper">
@@ -233,7 +234,7 @@
                   <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  Para efeito de segmentação, vale cuidar dos resultados até que a companhia aérea assuma. Os acusadores, no entanto, precisam disso e de alguma disciplina. Algum desmaio, mas sempre um sorriso.
+                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
                 </p>
                 <div class="profile mt-auto">
                   <img src="{% static 'img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
@@ -336,6 +337,10 @@
     <img src="{% static 'img/whatsapp-icon.png' %}" alt="WhatsApp">
     <span class="tooltip">Enviar mensagem</span>
   </a>
+  <div id="preloader">
+    <div class="line"></div>
+  </div>
+
   <!-- Vendor JS Files -->
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
   <script src="{% static 'vendor/swiper/swiper-bundle.min.js' %}"></script>
