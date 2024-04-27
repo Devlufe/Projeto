@@ -1,7 +1,9 @@
 from django.urls import path
-from . import views
-from principal.views import enviar_foto
-from principal.views import enviar_foto_success
+from .import views
+from .views import enviar_foto # Importe ambas as funções do mesmo módulo
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 
 
@@ -16,6 +18,6 @@ urlpatterns = [
     path('services/', views.services, name='services'),
 
     path('enviar-foto/', enviar_foto, name='enviar_foto'),
-    path('enviar-foto/success/', enviar_foto_success, name='enviar_foto_success'),
+    
     # Outras URLs do seu aplicativo...
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
