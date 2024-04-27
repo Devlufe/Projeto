@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Foto</title>
+</head>
+<body>
+    <h1>Enviar Foto</h1>
+    <!-- Adicione um bloco para exibir mensagens -->
+    {% if messages %}
+        {% for message in messages %}
+            <div>{{ message }}</div>
+        {% endfor %}
+    {% endif %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="mb-3">
+            <label class="form-label" for="customFile">Escolha a foto:</label>
+            <input type="file" class="form-control" id="customFile" name="imagem">
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
