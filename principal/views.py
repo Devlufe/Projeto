@@ -5,13 +5,17 @@ from django.contrib.messages import constants
 from django.contrib import messages
 from django.contrib import auth
 from .forms import FotoForm
+from .models import Foto
+from django.views.generic import TemplateView
 
 
 
-def index (request):
-    
+def index(request):
     if request.method == 'GET':
-        return render(request, 'index.html')
+        fotos = Foto.objects.all()
+        return render(request, 'index.html', {'fotos': fotos})
+
+
     
     
 def gallerysingle (request):
@@ -47,9 +51,7 @@ def services (request):
     if request.method == 'GET':
         return render(request, 'services.html')    
 
-def enviar_foto(request):
-    # Lógica para lidar com o envio de fotos
-    return render(request, 'enviar_foto.html')  # Renderiza o template enviar_foto.html
+from .models import Foto  # Importe o modelo Foto
 
 def enviar_foto(request):
     if request.method == 'POST':
@@ -63,3 +65,12 @@ def enviar_foto(request):
     else:
         form = FotoForm()
     return render(request, 'enviar_foto.html', {'form': form})
+
+
+class IndexView(TemplateView):
+    template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['fotos'] = Foto.objects.all()  # Adicione fotos ao contexto
+        return context
