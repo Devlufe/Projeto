@@ -42,7 +42,7 @@ def logindeautenticação(request):
         return redirect('/dashboard_fotografo/inicio')
     else:
         messages.add_message(request, constants.ERROR,'Usúario ou senha invalidos')
-        return redirect('/dashboard_fotografo/auth-login/')
+        return redirect('/dashboard_fotografo/login-de-autenticação/')
 
 
 def registro(request):

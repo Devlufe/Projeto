@@ -6,6 +6,9 @@ from django.contrib import messages
 from django.contrib import auth
 
 
+
+
+
 def cadastro(request):
     if request.method == 'GET':
         return render(request, 'cadastro.html')
