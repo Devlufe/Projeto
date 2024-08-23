@@ -4329,7 +4329,7 @@ footer .author-footer{
   .progress .progress-bar.progress-label:before{color:#495057;content:attr(aria-valuenow) "%";font-size:.8rem;position:absolute;right:0;top:-1.3rem}
   
   label{
-	color: #FFFFFF!important;
+	color: #000000!important;
   }
  
   .modal-body{
@@ -4414,3 +4414,4 @@ footer .author-footer{
 		opacity: 1
 	}
 }
+

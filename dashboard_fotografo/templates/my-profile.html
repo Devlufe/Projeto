@@ -86,7 +86,11 @@
 			 
 				  <li class="nav-item dropdown">
 					<a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					  <img src="{% static 'img/avatar/luis.jpg' %}" alt="">
+						{% if user_profile.profile_image %}
+						<img src="{{ user_profile.profile_image.url }}" alt="User Profile Image" class="d-block rounded" height="100" width="100px" id="uploadedAvatar" />
+					 {% else %}
+					   <img src="{% static 'default-profile-image.jpg' %}" alt="Default Profile Image" class="d-block rounded" height="100" width="100px" id="uploadedAvatar" />
+						{% endif %}
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="{% url 'meu-perfil' %}"><i class="fa fa-user size-icon-1"></i> <span>My Profile</span></a>
@@ -176,11 +180,20 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex align-items-start align-items-sm-center  ">
-                            <img src="{% static 'img/avatar/luis.jpg' %}" alt="user-avatar" class="d-block rounded" height="100" width="100px" 
-                            id="uploadedAvatar" />
+                            {% if user_profile.profile_image %}
+                            <img src="{{ user_profile.profile_image.url }}" alt="User Profile Image" class="d-block rounded" height="100" width="100px" id="uploadedAvatar" />
+                         {% else %}
+                           <img src="{% static 'default-profile-image.jpg' %}" alt="Default Profile Image" class="d-block rounded" height="100" width="100px" id="uploadedAvatar" />
+                            {% endif %}
                             <div class="button-wrapper">
-                              <label for="upload" class="btn btn-primary me-2 mb-4" tabindex="0">
-                                <span class="d-none d-sm-block">Carregar nova foto</span>
+								<form method="POST" enctype="multipart/form-data">
+									{% csrf_token %}
+									{{ form.as_p }}
+									<div class="mt-2">
+										<button type="submit" class="btn btn-primary me-2">Salvar alterações</button>
+										<button type="reset" class="btn btn-outline-secondary">Cancelar</button>
+									</div>
+								</form>
                                 <i class="bx bx-upload d-block d-sm-none"></i>
                                 <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg" />
                               </label>
@@ -198,8 +211,8 @@
                                 </div>
 
                                 <div class="mb-3 col-md-6">
-                                    <label for="lastName" class="form-label">Sobrenome</label>
-                                    <input class="form-control" type="text" name="lastName" id="lastName"  />
+										<label for="lastName" class="form-label">lastName</label>
+                                    <input class={{user_profile.last_name}} type="text" name="lastName" id="lastName"  />
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="email" class="form-label">E-mail</label>
@@ -284,4 +297,5 @@
     <!-- Template JS File -->
 	<script src="{% static 'js/script.js' %}"></script>
 	<script src="{% static 'js/custom.js' %}"></script>
+	
 {% endblock 'conteudo' %}

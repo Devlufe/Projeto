@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /**
    * Scroll top button
-   */
+   */       
   const scrollTop = document.querySelector('.scroll-top');
   if (scrollTop) {
     const togglescrollTop = function() {
