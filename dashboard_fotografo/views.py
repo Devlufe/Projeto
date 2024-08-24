@@ -16,7 +16,7 @@ def my_profile(request):
         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
             form.save()
-            return redirect('meu-perfil')
+            return redirect('my_profile')
     else:
         form = UserProfileForm(instance=user_profile)
 
@@ -85,7 +85,7 @@ def registro(request):
             User.objects.create_user(
                 email=email, username=username, password=senha)
             # vai dar erro pois nao foi criada a url login
-            return redirect('/dashboard_fotografo/auth-login')
+            return redirect('/dashboard_fotografo/login-de-autenticação')
         except:
             messages.add_message(request, constants.ERROR,'Erro interno do servidor. ')
             return redirect('/dashboard_fotografo/registro')

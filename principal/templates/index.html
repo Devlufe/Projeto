@@ -46,7 +46,7 @@
 </form>
 {% else %}
 <!-- Botão de Login -->
-<a href="{% url 'login' %}" class="btn btn-custom">Login</a>
+<a href="{% url 'login-de-autenticação' %}" class="btn btn-custom">Login</a>
 
 {% endif %}
 
@@ -97,7 +97,7 @@
             </li>
             <li><a href="{% url 'services' %}">Serviços</a></li>
             <li><a href="{% url 'contact' %}">Contatos</a></li>
-            <li><a href="{% url 'login-de-autenticação' %}">Dashboard</a></li>
+            <li><a href="{% url 'my_profile' %}">Dashboard</a></li>
           </ul>
         </nav>
  

@@ -93,7 +93,7 @@
 						{% endif %}
 					</a>
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="{% url 'meu-perfil' %}"><i class="fa fa-user size-icon-1"></i> <span>My Profile</span></a>
+						<a class="dropdown-item" href="{% url 'my_profile' %}"><i class="fa fa-user size-icon-1"></i> <span>My Profile</span></a>
 						<a class="dropdown-item" href="settings.html"><i class="fa fa-cog size-icon-1"></i> <span>Settings</span></a>
 						<hr class="dropdown-divider">
 						<a class="dropdown-item" href="#"><i class="fa fa-sign-out-alt  size-icon-1"></i> <span>My Profile</span></a>
@@ -116,7 +116,7 @@
                     </a>
 					<a href="{% url 'inicio' %}">
 						<i class='bx bxs-dashboard icon' ></i> Dashboard
-						<a href="{% url 'meu-perfil' %}">
+						<a href="{% url 'my_profile' %}">
 							<i class='bx bxs-dashboard icon' ></i> Meu Perfil
 					</a>
 				</li>
@@ -212,7 +212,7 @@
 
                                 <div class="mb-3 col-md-6">
 										<label for="lastName" class="form-label">lastName</label>
-                                    <input class={{user_profile.last_name}} type="text" name="lastName" id="lastName"  />
+                                    <input class="form-control" type="text" name="lastName" id="lastName"  />
                                 </div>
                                 <div class="mb-3 col-md-6">
                                     <label for="email" class="form-label">E-mail</label>
