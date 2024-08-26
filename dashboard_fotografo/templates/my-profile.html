@@ -186,14 +186,7 @@
                            <img src="{% static 'default-profile-image.jpg' %}" alt="Default Profile Image" class="d-block rounded" height="100" width="100px" id="uploadedAvatar" />
                             {% endif %}
                             <div class="button-wrapper">
-								<form method="POST" enctype="multipart/form-data">
-									{% csrf_token %}
-									{{ form.as_p }}
-									<div class="mt-2">
-										<button type="submit" class="btn btn-primary me-2">Salvar alterações</button>
-										<button type="reset" class="btn btn-outline-secondary">Cancelar</button>
-									</div>
-								</form>
+
                                 <i class="bx bx-upload d-block d-sm-none"></i>
                                 <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg" />
                               </label>
@@ -202,35 +195,46 @@
                         </div>
                     </div>
                     
-                    <div class="card-body"> 
-                        <form  method="POST" accept="my-profile.html">
-                            <div class="row">
-                                <div class="mb-3 col-md-6">
-                                    <label for="firstName" class="form-label">Primeiro nome</label>
-                                    <input class="form-control" type="text" id="firstName" name="firstName" />
-                                </div>
-
-                                <div class="mb-3 col-md-6">
-										<label for="lastName" class="form-label">lastName</label>
-                                    <input class="form-control" type="text" name="lastName" id="lastName"  />
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="email" class="form-label">E-mail</label>
-                                    <input class="form-control" type="text" id="email" name="email"  placeholder="Email@example.com" />
-                                </div>
-                                <div class="mb-3 col-md-6">
-                                    <label for="organization" class="form-label">Organização</label>
-                                    <input type="text" class="form-control" id="organization" name="organization" />
-                                </div>
-                              
-                                <div class="mt-2">
-                                    <button type="submit" class="btn btn-primary me-2">Salvar alterações</button>
-                                    <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
-                                </div>
-                        </form>
-                        </div>
-                    </div>
-                </div>
+					<div class="card-body"> 
+						<form method="POST" enctype="multipart/form-data" action="{% url 'my_profile' %}">
+							{% csrf_token %}
+							<div class="row">
+								<div class="mb-3 col-md-6">
+									<label for="first_name" class="form-label">Primeiro nome</label>
+									{{ form.first_name }}
+								</div>
+					
+								<div class="mb-3 col-md-6">
+									<label for="last_name" class="form-label">Sobrenome</label>
+									{{ form.last_name }}
+								</div>
+					
+								<div class="mb-3 col-md-6">
+									<label for="email" class="form-label">E-mail</label>
+									{{ form.email }}
+								</div>
+					
+								<div class="mb-3 col-md-6">
+									<label for="organization" class="form-label">Organização</label>
+									{{ form.organization }}
+								</div>
+					
+								<div class="mb-3 col-md-6">
+									<label for="profile_image" class="form-label">Imagem de Perfil</label>
+									{{ form.profile_image }}
+								</div>
+					
+								<div class="mt-2">
+									<button type="submit" class="btn btn-primary me-2">Salvar alterações</button>
+									<button type="reset" class="btn btn-outline-secondary">Cancelar</button>
+								</div>
+							</div>
+						</form>
+					</div>
+					
+						</div>
+					</div>
+				
 
                     <div class="card">
                         <h5 class="card-header">Deletar conta</h5>
