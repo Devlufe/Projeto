@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'usuarios',
     'principal',
     'dashboard_fotografo',
+    'widget_tweaks',
 ]
 
 
