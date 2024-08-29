@@ -89,7 +89,7 @@
 				  <li class="nav-item dropdown">
 					<a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						{% if user_profile.profile_image %}
-						<img src="{{ user_profile.profile_image.url }}" alt="User Profile Image" class="d-block rounded" height="100" width="100px" id="uploadedAvatar" />
+						<img src="{{ user_profile.profile_image.url }}" alt="User Profile Image" class="d-block" height="100" width="100" id="uploadedAvatar" style="border-radius: 50%;" />
 					 {% else %}
 					   <img src="{% static 'default-profile-image.jpg' %}" alt="Default Profile Image" class="d-block rounded" height="100" width="100px" id="uploadedAvatar" />
 						{% endif %}
@@ -174,69 +174,71 @@
 	<div class="content-start transition">
 		<div class="container-fluid dashboard">
 			<div class="content-header">
-				<h4>Olá,{{ user.username }}</h4>
+				<h4>Olá, {{ user_profile.first_name }}</h4>
 				<p>Altere informações sobre você nesta página</p>
 			</div>
 		  
             <div class="row">
                 <div class="card">
                     <div class="card-body">
-                        <div class="d-flex align-items-start align-items-sm-center  ">
-                            {% if user_profile.profile_image %}
-                            <img src="{{ user_profile.profile_image.url }}" alt="User Profile Image" class="d-block rounded" height="100" width="100px" id="uploadedAvatar" />
-                         {% else %}
-                           <img src="{% static 'default-profile-image.jpg' %}" alt="Default Profile Image" class="d-block rounded" height="100" width="100px" id="uploadedAvatar" />
-                            {% endif %}
-                            <div class="button-wrapper">
-
-                                <i class="bx bx-upload d-block d-sm-none"></i>
-                                <input type="file" id="upload" class="account-file-input" hidden accept="image/png, image/jpeg" />
-                              </label>
-                              <p class="text-muted mb-0">JPG, GIF ou PNG permitidos. Tamanho máximo de 800K</p>
-							  <div class="mb-3 col-md-6">
-								<label for="profile_image" class="form-label">Imagem de Perfil</label>
-								{{ form.profile_image }}
-							</div>	
+                        <div class="d-flex align-items-start">
+                            <!-- Imagem de Perfil -->
+                            <div class="me-3">
+                                {% if user_profile.profile_image %}
+								<img src="{{ user_profile.profile_image.url }}" alt="User Profile Image" class="d-block" height="100" width="100" id="uploadedAvatar" style="border-radius: 50%;" />
+                                {% else %}
+                                    <img src="{% static 'default-profile-image.jpg' %}" alt="Default Profile Image" class="d-block rounded" height="100" width="100" id="uploadedAvatar" />
+                                {% endif %}
                             </div>
+
+                            <!-- Campo de Upload de Imagem -->
+                            <div class="flex-grow-1">
+                                <form method="POST" enctype="multipart/form-data" action="{% url 'my_profile' %}">
+                                    {% csrf_token %}
+                                    <div class="mb-3">
+                                        <label for="{{ form.profile_image.id_for_label }}" class="form-label">Imagem de Perfil</label>
+                                        {{ form.profile_image|add_class:"form-control" }}
+
+                                    </div>
                         </div>
                     </div>
-                    
-					<div class="card-body"> 
-						<form method="POST" enctype="multipart/form-data" action="{% url 'my_profile' %}">
-							{% csrf_token %}
-							<div class="row">
-								<div class="mb-3 col-md-6">
-									<label for="{{ form.first_name.id_for_label }}" class="form-label">Primeiro nome</label>
-									{{ form.first_name|add_class:"form-control" }}
-								</div>
-					
-								<div class="mb-3 col-md-6">
-									<label for="{{form.last_name.id_for_label}}" class="form-label">Sobrenome</label>
-									{{ form.last_name|add_class:"form-control" }}
-								</div>
-					
-								<div class="mb-3 col-md-6">
-									<label for="email" class="form-label">E-mail</label>
-									{{ form.email|add_class:"form-control" }}
-								</div>
-					
-								<div class="mb-3 col-md-6">
-									<label for="organization" class="form-label">Organização</label>
-									{{ form.organization|add_class:"form-control" }}
-								</div>
-					
 
-					
-								<div class="mt-2">
-									<button type="submit" class="btn btn-primary me-2">Salvar alterações</button>
-									<button type="reset" class="btn btn-outline-secondary">Cancelar</button>
-								</div>
-							</div>
-						</form>
-					</div>
-					
-						</div>
-					</div>
+                    <div class="card-body">
+                        <!-- Formulário para atualizar o perfil -->
+                        <form method="POST" enctype="multipart/form-data" action="{% url 'my_profile' %}">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="mb-3 col-md-6">
+                                    <label for="{{ form.first_name.id_for_label }}" class="form-label">Primeiro nome</label>
+                                    {{ form.first_name|add_class:"form-control" }}
+                                </div>
+
+                                <div class="mb-3 col-md-6">
+                                    <label for="{{ form.last_name.id_for_label }}" class="form-label">Sobrenome</label>
+                                    {{ form.last_name|add_class:"form-control" }}
+                                </div>
+
+                                <div class="mb-3 col-md-6">
+                                    <label for="{{ form.email.id_for_label }}" class="form-label">E-mail</label>
+                                    {{ form.email|add_class:"form-control" }}
+                                </div>
+
+                                <div class="mb-3 col-md-6">
+                                    <label for="{{ form.organization.id_for_label }}" class="form-label">Organização</label>
+                                    {{ form.organization|add_class:"form-control" }}
+                                </div>
+
+
+
+                                <div class="mt-2">
+                                    <button type="submit" class="btn btn-primary me-2">Salvar alterações</button>
+                                    <button type="reset" class="btn btn-outline-secondary">Cancelar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
 				
 
                     <div class="card">

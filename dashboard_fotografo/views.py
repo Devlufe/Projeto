@@ -15,12 +15,23 @@ def my_profile(request):
     if request.method == 'POST':
         form = UserProfileForm(request.POST, request.FILES, instance=user_profile)
         if form.is_valid():
-            form.save()
+            user_profile = form.save(commit=False)
+            
+            # Se o campo de imagem estiver presente nos arquivos enviados
+            if 'profile_image' in request.FILES:
+                user_profile.profile_image = request.FILES['profile_image']
+            # Se o campo de limpar imagem foi marcado
+            elif request.POST.get('clear_image'):
+                user_profile.profile_image = None
+            
+            user_profile.save()
+            messages.add_message(request, constants.SUCCESS, 'Perfil atualizado com sucesso!')
             return redirect('my_profile')
     else:
         form = UserProfileForm(instance=user_profile)
 
     return render(request, 'my-profile.html', {'form': form, 'user_profile': user_profile})
+
 
 
 def autenticaçãoesquecisenha(request):
@@ -101,3 +112,4 @@ def meuperfil(request):
 
     if request.method == 'GET':
         return render(request, 'meu-perfil.html')
+
