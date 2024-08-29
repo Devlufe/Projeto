@@ -13,6 +13,11 @@
 	<link rel="stylesheet" href="{% static 'modules/fontawesome6.1.1/css/all.css' %}">
 	<!-- Boxicons CSS-->
 	<link rel="stylesheet" href="{% static 'modules/boxicons/css/boxicons.min.css' %}">
+
+
+	<link rel="stylesheet" type="text/css" href="{% static 'galeria/css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'galeria/css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'galeria/css/fonts-icones.css' %}">
 {% endblock %} 
 
 {% block 'conteudo' %}
@@ -114,7 +119,7 @@
                     </a>
 					<a href="{% url 'inicio' %}">
 						<i class='bx bxs-dashboard icon' ></i> Dashboard
-						<a href="{% url 'meu-perfil' %}">
+						<a href="{% url 'my_profile' %}">
 							<i class='bx bxs-dashboard icon' ></i> Meu Perfil
 					</a>
 				</li>
@@ -141,9 +146,6 @@
 						<i class='bx bx-chevron-right icon-right' ></i>
 					</a>
                     <ul class="side-dropdown">
-                        <li><a href="{% url 'login-de-autenticação'%}">Login</a></li>
-                        <li><a href="{% url 'registro'%}">Registro</a></li>
-                        <li><a href="{% url 'autenticação-esqueci-senha'%}">Esqueci minha senha</a></li>
                         <li><a href="{% url 'redefinir-senha'%}">Redefinir senha</a></li>
                     </ul>
                 </li>
@@ -172,6 +174,77 @@
 			<div class="content-header">
 				<h1>Álbum</h1>
 			</div>
+			
+			
+			<main class="main_content container">
+			
+					
+				<section class="section-seu-codigo container">
+					
+					<div class="content">
+						
+						<h1 class="section_title"><i class="icon icon-photo"> </i> Galeria de Fotos</h1>
+						
+						<div class="box-galeria">
+								
+							<div class="box-foto">
+								<a href="{% static 'galeria/uploads/foto1.jpg' %}" rel="shadowbox[vocation]" title="Foto 1">
+									<img src="{% static 'galeria/uploads/foto1.jpg' %}">
+								</a>
+							</div>
+			
+							<div class="box-foto">
+								<a href="{% static 'galeria/uploads/foto2.jpg' %}" rel="shadowbox[vocation]" title="Foto 2">
+									<img src="{% static 'galeria/uploads/foto2.jpg' %}">
+								</a>
+							</div>
+			
+							<div class="box-foto">
+								<a href="{% static 'galeria/uploads/foto3.jpg' %}" rel="shadowbox[vocation]" title="Foto 3">
+									<img src="{% static 'galeria/uploads/foto3.jpg' %}">
+								</a>
+							</div>
+			
+							<div class="box-foto">
+								<a href="{% static 'galeria/uploads/foto4.jpg' %}" rel="shadowbox[vocation]" title="Foto 4">
+									<img src="{% static 'galeria/uploads/foto4.jpg' %}">
+								</a>
+							</div>
+			
+							<div class="box-foto">
+								<a href="{% static 'galeria/uploads/foto5.jpg' %}" rel="shadowbox[vocation]" title="Foto 5">
+									<img src="{% static 'galeria/uploads/foto5.jpg' %}">
+								</a>
+							</div>
+			
+							<div class="box-foto">
+								<a href="{% static 'galeria/uploads/foto6.jpg' %}" rel="shadowbox[vocation]" title="Foto 6">
+									<img src="{% static 'galeria/uploads/foto6.jpg' %}">
+								</a>
+							</div>
+			
+							<div class="box-foto">
+								<a href="{% static 'galeria/uploads/foto7.jpg' %}" rel="shadowbox[vocation]" title="Foto 7">
+									<img src="{% static 'galeria/uploads/foto7.jpg' %}">
+								</a>
+							</div>
+			
+							<div class="box-foto">
+								<a href="{% static 'galeria/uploads/foto8.jpg' %}" rel="shadowbox[vocation]" title="Foto 8">
+									<img src="{% static 'galeria/uploads/foto8.jpg' %}">
+								</a>
+							</div>
+			
+						</div><!--Box Galeria-->
+			
+			
+					<div class="clear"></div>
+					</div>
+				</section><!--FECHA BOX HTML-->
+			
+			
+			</main>
+			
             
              
 		 
@@ -218,6 +291,18 @@
     <!-- Template JS File -->
 	<script src="{% static 'js/script.js' %}"></script>
 	<script src="{% static 'js/custom.js' %}"></script>
+
+<!--Aba galeria-->
+<script src="{% static 'galeria/js/jquery.js' %}"></script>
+<script src="{% static 'galeria/js/script.js' %}"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'galeria/js/shadowbox/shadowbox.css' %}" />
+<script src="{% static 'galeria/js/shadowbox/shadowbox.js' %}"></script>
+<script src="{% static 'galeria/js/shadowbox/script.shadowbox.js' %}"></script>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 
 	{% endblock 'conteudo' %}

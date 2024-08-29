@@ -72,7 +72,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'fotografia',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '26790312',
         'HOST': 'localhost', 
         'PORT': '3306',
         'OPTIONS': {
