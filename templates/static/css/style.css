@@ -4502,3 +4502,26 @@ footer .author-footer{
 .dark-mode-transition {
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
+
+#toggle-dark-mode i {
+    color: #fff;
+    transition: color 0.3s ease;
+	margin-left: auto;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px; /* Ajuste o padding conforme necessário */
+    border: none;
+    background-color: transparent; /* Deixe o fundo transparente para se misturar ao menu */
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Cor do ícone no modo claro */
+body:not(.dark-mode) #toggle-dark-mode i {
+    color: #000;
+}
+
+/* Cor do ícone no modo escuro */
+body.dark-mode #toggle-dark-mode i {
+    color: #f1c40f;
+}

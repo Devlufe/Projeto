@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
 {% load static %}
+{% load widget_tweaks %}
 <!doctype html>
 
 {% block 'cabecalho' %}
@@ -117,6 +118,9 @@
 
             <ul class="side-menu">
                 <li>
+					<button id="toggle-dark-mode" class="btn btn-secondary">
+						<i id="dark-mode-icon" class="fas fa-moon"></i>
+					</button>
 					<a href="{% url 'index' %}">
 						<i class='bx bxs-dashboard icon' ></i>Inicio
                     </a>
@@ -372,25 +376,6 @@
 		   </div>
 		</div>
 	</div>
-
-
-	<!-- Footer -->				
-	<footer>
-		<div class="footer">
-			<div class="float-start">
-				<p>2022 &copy; Atrana</p>
-			</div>
-				<div class="float-end">
-					<p>Crafted with 
-						<span class="text-danger">
-							<i class="fa fa-heart"></i> by 
-							<a href="https://www.facebook.com/andreew.co.id/" class="author-footer">Andre Tri Ramadana</a>
-						</span> 
-					</p>
-			</div>
-		</div>
-	</footer>
-
 
 	<!-- Preloader -->
 	<div class="loader">
