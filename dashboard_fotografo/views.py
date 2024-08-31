@@ -108,14 +108,20 @@ def registro(request):
             return redirect('/dashboard_fotografo/registro')
 
 
-def páginasembranco(request):
+def galeria(request):
 
     if request.method == 'GET':
-        return render(request, 'páginas-em-branco.html')
+        return render(request, 'galeria.html')
 
 
 def meuperfil(request):
 
     if request.method == 'GET':
         return render(request, 'meu-perfil.html')
+    
+    
+    
+def salvaralbum(request):
+    if request.method == 'GET':
+        return render(request, 'salvar_album.html')
 

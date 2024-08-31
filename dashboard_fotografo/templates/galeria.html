@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
 {% load static %}
+{% load widget_tweaks %}
 <!doctype html>
 
 {% block 'cabecalho' %}
@@ -128,7 +129,7 @@
                 <li class="divider" data-text="STARTER">GALERIA</li>
 
 				<li>
-					<a href="{% url 'páginas-em-branco'%}">
+					<a href="{% url 'galeria'%}">
 						<i class='bx bxs-dashboard icon' ></i> Álbum
 					</a>
 				</li>
@@ -176,64 +177,40 @@
 			</div>
 			
 			
-			<main class="main_content container">
 			
-					
-				<section class="section-seu-codigo container">
-					
-					<div class="content">
-						
-						<h1 class="section_title"><i class="icon icon-photo"> </i> Galeria de Fotos</h1>
-						
-						<div class="box-galeria">
-								
-							<div class="box-foto">
-								<a href="{% static 'galeria/uploads/foto1.jpg' %}" rel="shadowbox[vocation]" title="Foto 1">
-									<img src="{% static 'galeria/uploads/foto1.jpg' %}">
-								</a>
-							</div>
+			<div class="container">
 			
-							<div class="box-foto">
-								<a href="{% static 'galeria/uploads/foto2.jpg' %}" rel="shadowbox[vocation]" title="Foto 2">
-									<img src="{% static 'galeria/uploads/foto2.jpg' %}">
-								</a>
-							</div>
-			
-							<div class="box-foto">
-								<a href="{% static 'galeria/uploads/foto3.jpg' %}" rel="shadowbox[vocation]" title="Foto 3">
-									<img src="{% static 'galeria/uploads/foto3.jpg' %}">
-								</a>
-							</div>
-			
-							<div class="box-foto">
-								<a href="{% static 'galeria/uploads/foto4.jpg' %}" rel="shadowbox[vocation]" title="Foto 4">
-									<img src="{% static 'galeria/uploads/foto4.jpg' %}">
-								</a>
-							</div>
-			
-							<div class="box-foto">
-								<a href="{% static 'galeria/uploads/foto5.jpg' %}" rel="shadowbox[vocation]" title="Foto 5">
-									<img src="{% static 'galeria/uploads/foto5.jpg' %}">
-								</a>
-							</div>
-			
-							<div class="box-foto">
-								<a href="{% static 'galeria/uploads/foto6.jpg' %}" rel="shadowbox[vocation]" title="Foto 6">
-									<img src="{% static 'galeria/uploads/foto6.jpg' %}">
-								</a>
-							</div>
-			
-							<div class="box-foto">
-								<a href="{% static 'galeria/uploads/foto7.jpg' %}" rel="shadowbox[vocation]" title="Foto 7">
-									<img src="{% static 'galeria/uploads/foto7.jpg' %}">
-								</a>
-							</div>
-			
-							<div class="box-foto">
-								<a href="{% static 'galeria/uploads/foto8.jpg' %}" rel="shadowbox[vocation]" title="Foto 8">
-									<img src="{% static 'galeria/uploads/foto8.jpg' %}">
-								</a>
-							</div>
+				<button class="btn" onclick="toggleForm()">Criar Álbum</button>
+		
+				<div id="albumForm" class="form-container" style="display: none;">
+					<h2>Criar Novo Álbum</h2>
+					<form action="{% url 'salvar-album' %}" method="post" enctype="multipart/form-data">
+						{% csrf_token %}
+						<div class="form-group">
+							<label for="nome">Nome do Álbum:</label>
+							<input type="text" id="nome" name="nome" class="input-text" required>
+						</div>
+						<div class="form-group">
+							<label for="fotos">Upload de Fotos:</label>
+							<input type="file" id="fotos" name="fotos" class="input-file" multiple required>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn">Salvar Álbum</button>
+						</div>
+					</form>
+				</div>
+			</div>
+			<script>
+				function toggleForm() {
+					var form = document.getElementById("albumForm");
+					if (form.style.display === "none") {
+						form.style.display = "block";
+					} else {
+						form.style.display = "none";
+					}
+				}
+			</script>
+							
 			
 						</div><!--Box Galeria-->
 			

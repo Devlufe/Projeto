@@ -12,6 +12,7 @@ urlpatterns = [
     path('registro/', views.registro, name='registro'),
     path('inicio/', views.inicio, name='inicio'),
     path('redefinir-senha/', views.redefinirsenha, name='redefinir-senha'),
-    path('páginas-em-branco/', views.páginasembranco, name='páginas-em-branco'),
+    path('galeria/', views.galeria, name='galeria'),
+    path('salvar-album/', views.salvaralbum, name='salvar-album'),
 ] 
 
