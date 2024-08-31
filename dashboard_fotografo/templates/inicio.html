@@ -96,8 +96,12 @@
 			 
 				  <li class="nav-item dropdown">
 					<a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-					  <img src="{% static 'img/avatar/avatar-1.png' %}" alt="">
-					</a>
+						{% if user_profile.profile_image %}
+						<img src="{{ user_profile.profile_image.url }}" alt="User Profile Image" class="d-block" height="100" width="100" id="uploadedAvatar" style="border-radius: 50%;" />
+					 {% else %}
+					   <img src="{% static 'default-profile-image.jpg' %}" alt="Default Profile Image" class="d-block rounded" height="100" width="100px" id="uploadedAvatar" />
+						{% endif %}
+					</a>	
 					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="my-profile.html"><i class="fa fa-user size-icon-1"></i> <span>My Profile</span></a>
 						<a class="dropdown-item" href="settings.html"><i class="fa fa-cog size-icon-1"></i> <span>Settings</span></a>
@@ -185,9 +189,10 @@
 	<div class="content-start transition">
 		<div class="container-fluid dashboard">
 			<div class="content-header">
-				<h1>Bem-vindo, {{ user.username }}</h1>
-				<p></p>
+				<h4>Olá, {{ user_profile.first_name }}</h4>
+				<p>Altere informações sobre você nesta página</p>
 			</div>
+		  
 			
 			<div class="row">
 

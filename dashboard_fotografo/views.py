@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.messages import constants
@@ -9,6 +9,11 @@ from .forms import UserProfileForm
 from django.contrib.auth.decorators import login_required
 
 @login_required
+
+def meuperfil(request):
+    user_profile = get_object_or_404(UserProfile, user=request.user)
+    return render(request, 'meu-perfil.html', {'user_profile': user_profile})
+
 def my_profile(request):
     user_profile, created = UserProfile.objects.get_or_create(user=request.user)
 
@@ -47,9 +52,10 @@ def redefinirsenha(request):
 
 
 def inicio(request):
-
     if request.method == 'GET':
-        return render(request, 'inicio.html')
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        return render(request, 'inicio.html', {'user_profile': user_profile})
+
 
 
 def logindeautenticação(request):
