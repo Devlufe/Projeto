@@ -1,10 +1,11 @@
 from django.urls import path
 from . import views
-from .views import my_profile, inicio
+from .views import my_profile, inicio, galeria
 
 
 
 urlpatterns = [
+    path('galeria/', galeria, name='galeria'),
     path('my_profile/', my_profile, name='my_profile'),
     path('inicio/', inicio, name='inicio'),
     path('autenticação-esqueci-senha/', views.autenticaçãoesquecisenha, name='autenticação-esqueci-senha'),
