@@ -1,56 +1,223 @@
 {% extends 'base3.html' %}
 {% load static %}
-{% load widget_tweaks %}
-{% block 'page' %}
 
-			<div class="container">
-			
-				<button class="btn" onclick="toggleForm()">Criar Álbum</button>
-		
-				<div id="albumForm" class="form-container" style="display: none;">
-					<h2>Criar Novo Álbum</h2>
-					<form action="{% url 'salvar-album' %}" method="post" enctype="multipart/form-data">
-						{% csrf_token %}
-						<div class="form-group">
-							<label for="nome">Nome do Álbum:</label>
-							<input type="text" id="nome" name="nome" class="input-text" required>
-						</div>
-						<div class="form-group">
-							<label for="fotos">Upload de Fotos:</label>
-							<input type="file" id="fotos" name="fotos" class="input-file" multiple required>
-						</div>
-						<div class="form-group">
-							<button type="submit" class="btn">Salvar Álbum</button>
-						</div>
-					</form>
-				</div>
-			</div>
-			<script>
-				function toggleForm() {
-					var form = document.getElementById("albumForm");
-					if (form.style.display === "none") {
-						form.style.display = "block";
-					} else {
-						form.style.display = "none";
-					}
-				}
-			</script>
+<!doctype html>
+
+{% block 'cabecalho' %}
+
+
+	<!-- Bootstrap CSS-->
+	<link rel="stylesheet" href="{% static 'modules/bootstrap-5.1.3/css/bootstrap.css' %}">
+	<!-- Style CSS -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- FontAwesome CSS-->
+	<link rel="stylesheet" href="{% static 'modules/fontawesome6.1.1/css/all.css' %}">
+	<!-- Boxicons CSS-->
+	<link rel="stylesheet" href="{% static 'modules/boxicons/css/boxicons.min.css' %}">
+
+
+	<link rel="stylesheet" type="text/css" href="{% static 'galeria/css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'galeria/css/style.css'%}">
+    <link rel="stylesheet" type="text/css" href="{% static 'galeria/css/fonts-icones.css' %}">
+{% endblock %} 
+
+{% block 'conteudo' %}
+
+	<div class="topbar transition">
+		<div class="bars">
+		<button type="button" class="btn transition" id="sidebar-toggle">
+			<i class="fa fa-bars"></i>
+		</button>
+	</div>
+		<div class="menu">
+			<ul>
+				<li class="nav-item dropdown dropdown-list-toggle">
+					<a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<i class="fa fa-bell size-icon-1"></i><span class="badge bg-danger notif">4</span>
+					</a> 				 
+					<div class="dropdown-menu dropdown-list">
+						<div class="dropdown-header">Notifications</div>
+						<div class="dropdown-list-content dropdown-list-icons">
+							<div class="custome-list-notif"> 
+							<a href="#" class="dropdown-item dropdown-item-unread">
+								<div class="dropdown-item-icon bg-primary text-white">
+								<i class="fas fa-code"></i>
+								</div>	
+								<div class="dropdown-item-desc">
+									The Atrana template has the latest update!
+								<div class="time text-primary">3 Min Ago</div>
+								</div>
+							</a>
+
+							<a href="#" class="dropdown-item">
+								<div class="dropdown-item-icon bg-info text-white">
+								<i class="far fa-user"></i>
+								</div>
+								<div class="dropdown-item-desc">
+								Sri asks you for friendship!
+								<div class="time">12 Hours Ago</div>
+								</div>
+							</a>
+
+							<a href="#" class="dropdown-item">
+								<div class="dropdown-item-icon bg-danger text-white">
+								<i class="fas fa-check"></i>
+								</div>
+								<div class="dropdown-item-desc">
+									Storage has been cleared, now you can get back to work!
+								<div class="time">20 Hours Ago</div>
+								</div>
+							</a>
 							
+							<a href="#" class="dropdown-item">
+								<div class="dropdown-item-icon bg-info text-white">
+								<i class="fas fa-bell"></i>
+								</div>
+								<div class="dropdown-item-desc">
+								Welcome to Atrana Template, I hope you enjoy using this template!
+								<div class="time">Yesterday</div>
+								</div>
+							</a>
+
+							</div>
+						</div>
+
+						<div class="dropdown-footer text-center">
+						<a href="#">View All</a>
+						</div>
+
+					
+				</li>
+				
+				<li class="nav-item dropdown">
+					<a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+					<img src="{% static 'images/avatar/avatar-1.png' %}" alt="">
+					</a>
+					<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="my-profile.html"><i class="fa fa-user size-icon-1"></i> <span>My Profile</span></a>
+						<a class="dropdown-item" href="settings.html"><i class="fa fa-cog size-icon-1"></i> <span>Settings</span></a>
+						<hr class="dropdown-divider">
+						<a class="dropdown-item" href="#"><i class="fa fa-sign-out-alt  size-icon-1"></i> <span>My Profile</span></a>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<!--Sidebar-->
+	<div class="sidebar transition overlay-scrollbars animate__animated  animate__slideInLeft">
+        <div class="sidebar-content"> 
+        <div id="sidebar">
 			
-						</div><!--Box Galeria-->
-			
-			
-					<div class="clear"></div>
-					</div>
-				</section><!--FECHA BOX HTML-->
-			
-			
-			</main>
-			
-            
-             
-		 
-            	
-        </div><!-- End Container-->
-    </div><!-- End Content-->
-{% endblock 'page' %}
+
+            <ul class="side-menu">
+                <li>
+					<a href="{% url 'index' %}">
+						<i class='bx bxs-dashboard icon' ></i>Inicio
+                    </a>
+					<a href="{% url 'inicio' %}">
+						<i class='bx bxs-dashboard icon' ></i> Dashboard
+						<a href="{% url 'my_profile' %}">
+							<i class='bx bxs-dashboard icon' ></i> Meu Perfil
+					</a>
+				</li>
+
+				<!-- Divider-->
+                <li class="divider" data-text="STARTER">GALERIA</li>
+
+				<li>
+					<a href="{% url 'galeria'%}">
+						<i class='bx bxs-dashboard icon' ></i> Álbum
+					</a>
+				</li>
+
+                
+                
+
+				<!-- Divider-->
+				<li class="divider" data-text="Pages">Pages</li>
+
+				<li>
+                    <a href="#">
+						<i class='bx bxs-user icon' ></i> 
+						Autenticação 
+						<i class='bx bx-chevron-right icon-right' ></i>
+					</a>
+                    <ul class="side-dropdown">
+                        <li><a href="{% url 'redefinir-senha'%}">Redefinir senha</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="ads">
+				<div class="wrapper">
+					<div class="help-icon"><i class="fa fa-circle-question fa-3x"></i></div>
+					<p>Contate-nos <strong>Whatsapp</strong>?</p>
+                    <a href="docs/" class="btn-upgrade">Clique Aqui</a>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+	</div>
+	</div><!-- End Sidebar-->
+
+
+	<div class="sidebar-overlay"></div>
+
+
+	<!--Content Start-->
+	<div class="content-start transition  "> 
+		<div class="container-fluid dashboard">
+		<div class="content-header">
+		<h1>Álbum</h1>
+
+		
+
+		<div class="Container">
+					<h2>Preencher Informações do Álbum</h2>
+					{% if messages %}
+					<br>
+					{% for message in messages%}
+					<div class="alert {{message.tags}}">{{message}}</div>
+					{% endfor%}
+					{% endif %}
+					<form action="{% url 'galeria' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+						<br>
+						<div class="form-group">
+							<label>Imagens:</label>
+							<input class="form-control" type="file" name="imagens" multiple>
+						</div>
+						<br>
+						<br>
+						<div class="form-group">
+							<label>Nome:</label>
+							<input class="form-control" type="text" name="Nome_Album">
+						</div>
+						<br>
+						<br>
+						<div class="form-group">
+							<label>Selecione a categoria da foto</label>
+							<select class="form-control" name="categoria">
+								{% for categoria in categorias %}
+								<option value="{{categoria.id}}">{{categoria.titulo}}</option>
+								{% endfor %}
+		
+							</select>
+						</div>
+		
+				</div>
+				<div class="form-group">
+					<input type="submit" class="btn" value="Salvar Album">
+				</div>
+				</form>
+		</div>
+		</div>
+		
+		</div><!-- End Container-->
+		</div><!-- End Content-->
+
+
+
+{% endblock 'conteudo' %}
