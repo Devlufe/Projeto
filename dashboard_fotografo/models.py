@@ -25,4 +25,9 @@ class Albuns(models.Model):
     Nome_Album = models.CharField(max_length=50)
     categoria = models.ForeignKey(Categoria, on_delete= models.CASCADE)
     
+    
+class foto(models.Model):
+    album = models.ForeignKey(Albuns, on_delete=models.CASCADE)
+    arquivo = models.ImageField(upload_to="imagens_do_Album")
+    
 
