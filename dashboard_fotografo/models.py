@@ -10,7 +10,7 @@ class UserProfile(models.Model):
     last_name = models.CharField(max_length=50)
     email = models.EmailField()
     organization = models.CharField(max_length=100)
-    profile_image = models.ImageField(upload_to='profile_images/', blank=True)
+    profile_image = models.ImageField(upload_to='profile_images/',default='default-profile-image.jpg', blank=True)
 
     def __str__(self):
         return self.user.username
